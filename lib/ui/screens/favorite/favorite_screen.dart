@@ -63,10 +63,12 @@ class SongTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      title: Text(song.title),
-      trailing: Text(
-        isPlaying ? "Playing" : "",
-        style: TextStyle(color: Colors.amber),
+      title: Row(
+        children: [
+          Text(song.title),
+          SizedBox(width: 5,),
+          Text(isPlaying ? "Playing": "", style: TextStyle(fontSize: 15 , color: Colors.red),)
+        ],
       ),
     );
   }
