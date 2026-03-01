@@ -14,6 +14,7 @@ class SettingsScreen extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Container(
+        color: settingsState.theme.backgroundColor,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -35,7 +36,7 @@ class SettingsScreen extends StatelessWidget {
                 .map(
                   (theme) => ThemeColorButton(
                     themeColor: theme,
-                    isSelected: settingsState.theme == settingsState.,
+                    isSelected: settingsState.theme == theme,
                     onTap: (value) {
                       settingsState.changeTheme(value);
                     },
